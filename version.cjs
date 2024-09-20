@@ -7,8 +7,6 @@ const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
 // Function to prompt user for which version to bump and how
 async function promptVersionBump() {
     try {
-        // console.log({ sup: process.stdin });
-
         // First, ask if we are updating staging or production version
         const { versionType } = await inquirer.default.prompt([
             {
@@ -19,8 +17,6 @@ async function promptVersionBump() {
                 default: 'staging'
             }
         ]);
-        console.log({ versionType });
-
         // Now ask which part of the version to bump: major, minor, or patch
         const { incrementType } = await inquirer.default.prompt([
             {
@@ -31,8 +27,6 @@ async function promptVersionBump() {
                 default: 'patch'
             }
         ]);
-        // const versionType = 'staging';
-        // const incrementType = 'patch';
         // Get the current version depending on whether it's staging or production
         let currentVersion = versionType === 'staging' ? packageJson.non_production_version : packageJson.production_version;
 
@@ -73,7 +67,5 @@ async function promptVersionBump() {
 
 // Run the prompt
 (async function init() {
-    console.log("h1111");
     await promptVersionBump();
-    console.log("h22222");
 })();
