@@ -2,7 +2,7 @@
   "name": "test",
   "version": "1.0.0",
   "production_version": "1.0.0",
-  "non_production_version": "1.0.1",
+  "non_production_version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
