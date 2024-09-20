@@ -17,5 +17,9 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/zocial-yash/test/issues"
+  },
+  "devDependencies": {
+    "husky": "^9.1.6",
+    "inquirer": "^11.0.2"
   }
 }
