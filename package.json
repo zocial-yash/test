@@ -7,7 +7,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "set:version": "node version.js"
+    "updateVersion": "node version.cjs"
   },
   "repository": {
     "type": "git",
@@ -17,14 +17,5 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/zocial-yash/test/issues"
-  },
-  "homepage": "https://github.com/zocial-yash/test#readme",
-  "dependencies": {
-    "cluster": "^0.7.7",
-    "express": "^4.21.0"
-  },
-  "devDependencies": {
-    "husky": "^9.1.6",
-    "inquirer": "^11.0.2"
   }
 }
