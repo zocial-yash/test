@@ -10,29 +10,29 @@ async function promptVersionBump() {
         // console.log({ sup: process.stdin });
 
         // First, ask if we are updating staging or production version
-        // const { versionType } = await inquirer.default.prompt([
-        //     {
-        //         type: 'list',
-        //         name: 'versionType',
-        //         message: 'Which version do you want to bump?',
-        //         choices: ['staging', 'production'],
-        //         default: 'staging'
-        //     }
-        // ]);
-        // console.log({ versionType });
+        const { versionType } = await inquirer.default.prompt([
+            {
+                type: 'list',
+                name: 'versionType',
+                message: 'Which version do you want to bump?',
+                choices: ['staging', 'production'],
+                default: 'staging'
+            }
+        ]);
+        console.log({ versionType });
 
-        // // Now ask which part of the version to bump: major, minor, or patch
-        // const { incrementType } = await inquirer.default.prompt([
-        //     {
-        //         type: 'list',
-        //         name: 'incrementType',
-        //         message: `Which part of the ${versionType} version do you want to bump?`,
-        //         choices: ['patch', 'minor', 'major'],
-        //         default: 'patch'
-        //     }
-        // ]);
-        const versionType = 'staging';
-        const incrementType = 'patch';
+        // Now ask which part of the version to bump: major, minor, or patch
+        const { incrementType } = await inquirer.default.prompt([
+            {
+                type: 'list',
+                name: 'incrementType',
+                message: `Which part of the ${versionType} version do you want to bump?`,
+                choices: ['patch', 'minor', 'major'],
+                default: 'patch'
+            }
+        ]);
+        // const versionType = 'staging';
+        // const incrementType = 'patch';
         // Get the current version depending on whether it's staging or production
         let currentVersion = versionType === 'staging' ? packageJson.non_production_version : packageJson.production_version;
 
